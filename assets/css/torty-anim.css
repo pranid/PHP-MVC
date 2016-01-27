@@ -1,0 +1,50 @@
+*{
+    -webkit-transition: transition: all 0.5s ease-in-out;
+       -moz-transition: transition: all 0.5s ease-in-out;
+         -o-transition: transition: all 0.5s ease-in-out;
+            transition: transition: all 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    50% {
+                width: 200px;
+        -ms-transform: translate(50px,100px); /* IE 9 */
+    -webkit-transform: translate(50px,100px); /* Safari */
+            transform: translate(50px,100px);
+    }
+}
+@keyframes flip {
+    50% {
+        -ms-transform: rotateY( 180deg );
+    -webkit-transform: rotateY( 180deg );
+            transform: rotateY( 180deg );
+    }
+}
+@keyframes torty-launch {
+  0% {
+      opacity: 0;
+      -ms-transform:scale(2);
+  -webkit-transform:scale(2);
+          transform:scale(2);
+      
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes torty-hover {
+  0% {
+    background-color: #212121;
+  }
+}
+@keyframes torty-dock-hover {
+  0% {
+    opacity: 0.2;
+  }
+}
+@keyframes torty-btn {
+  0% {
+    background-color: #03A9F4;
+    color:#000;
+
+  }
+}
