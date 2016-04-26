@@ -1,0 +1,1 @@
+<?php $image_paths = "asa"; ?>
