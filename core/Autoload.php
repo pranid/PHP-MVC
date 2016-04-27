@@ -1,11 +1,37 @@
-<?php 
-    $this_dir = scandir($system_path.'/core/');
-    
-    foreach ($this_dir as $key => $file) {
-        if (!in_array($file,array(".","..","Autoload.php"))) {
-            include $system_path.'/core/'.$file;
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Praneeth Nidarshan
+ * Date: 10/19/2016
+ * Time: 6:59 PM
+ */
+
+if (isset($_config['base_uri'])) {
+    $base_uri = $_config['base_uri'];
+} else {
+    die("Could not find base_url in config.php");
+}
+
+/**
+ * Load core files
+ */
+try {
+    $core_path = "$base_uri/core";
+    $core = scandir($core_path);
+
+    foreach ($core as $key => $file) {
+        if (!in_array($file, array(".", "..", "Autoload.php", "index.html"))) {
+            include "$core_path/$file";
+            $class_name = explode('.', $file)[0];
+
+            if ($class_name == "Parser") {
+                $$class_name = new $class_name($_config);
+            } else {
+                $$class_name = new $class_name;
+            }
+
         }
     }
-    
-    Parser::route();
-?>
+} catch (Exception $e) {
+    echo 'Caught exception: ', $e->getMessage(), "\n";
+}

@@ -6,7 +6,7 @@
 		public function __construct() {
 			parent::__construct();
 			// $this->load->view();
-			echo $this->$load;
+//			echo $this->$load;
 			// var_dump($this);
 		}
 		
