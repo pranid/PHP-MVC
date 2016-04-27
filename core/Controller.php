@@ -3,7 +3,8 @@
         private $load = "as";
         // private $view;
         public function __construct() {
-            $this->$load = "Praneeth";
+            // $this->$load = "Praneeth";
+            echo "Praneeth";
         }
         
         public function load() {

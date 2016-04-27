@@ -1,11 +1,12 @@
 <?php 
-    $this_dir = scandir($system_path.'/core/');
-    
+    $this_dir = scandir('./core');
+
     foreach ($this_dir as $key => $file) {
         if (!in_array($file,array(".","..","Autoload.php"))) {
-            include $system_path.'/core/'.$file;
+            include './core/'.$file;
         }
     }
     
-    Parser::route();
+    // Parser::route();
+    $parser = new Parser;
 ?>
