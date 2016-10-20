@@ -5,13 +5,14 @@
 	class Welcome extends Controller {
 		public function __construct() {
 			parent::__construct();
-			// $this->load->view();
-//			echo $this->$load;
-			// var_dump($this);
+
 		}
 		
 		public function index() {
-			echo " Praneeth Nidarshan";
+            $data = array(
+                "image" => 'http://inndeinc.com/assets/img/INNDEINC-SLOGON.png'
+            );
+            $this->load->view("welcome", $data);
 		}
 	}
 ?>

@@ -19,9 +19,19 @@ try {
     $core_path = "$base_uri/core";
     $core = scandir($core_path);
 
+    include "$core_path/Parser.php";
+    include "$core_path/Loader.php";
+    include "$core_path/Database.php";
+    include "$core_path/File.php";
+    include "$core_path/Session.php";
+    include "$core_path/Controller.php";
+    include "$core_path/Model.php";
+
+
+
     foreach ($core as $key => $file) {
         if (!in_array($file, array(".", "..", "Autoload.php", "index.html"))) {
-            include "$core_path/$file";
+//            include "$core_path/$file";
             $class_name = explode('.', $file)[0];
 
             if ($class_name == "Parser") {

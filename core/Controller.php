@@ -1,22 +1,13 @@
-<?php 
-    class Controller{
-        private $load = "as";
-        // private $view;
+<?php
+
+class Controller
+{
+    public $load;
+    private $loader;
+
         public function __construct() {
-            // $this->$load = "Praneeth";
-//            echo "Praneeth";
+            $this->loader = new Loader();
+            $this->load = new Loader();
         }
-        
-        public function load() {
-            var_dump("Hello");
-            
-            $view = function() {
-                 return Parser::view();
-            };
-            
-            var_dump($view);
-        }
-      
-        
     }
 ?>
