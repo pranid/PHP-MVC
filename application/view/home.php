@@ -1,1 +1,1 @@
-<?php $image_paths = "asa"; ?>
+<h1>Hello</h1>

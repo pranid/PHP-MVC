@@ -10,9 +10,13 @@
 		
 		public function index() {
             $data = array(
-                "image" => 'http://inndeinc.com/assets/img/INNDEINC-SLOGON.png'
+                "content" => "welcome",
+                "image" => 'http://inndeinc.com/assets/img/INNDEINC-SLOGON.png',
+                "content_data" => array(
+                    "image" => 'http://inndeinc.com/assets/img/INNDEINC-SLOGON.png',
+                )
             );
-            $this->load->view("welcome", $data);
+            $this->load->view("template", $data);
 		}
 	}
 ?>

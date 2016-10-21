@@ -8,6 +8,7 @@
 
 if (isset($_config['base_uri'])) {
     $base_uri = $_config['base_uri'];
+    define("BASE_URL", $_config['base_url']);
 } else {
     die("Could not find base_url in config.php");
 }
@@ -27,10 +28,8 @@ try {
     include "$core_path/Controller.php";
     include "$core_path/Model.php";
 
-
-
     foreach ($core as $key => $file) {
-        if (!in_array($file, array(".", "..", "Autoload.php", "index.html"))) {
+        if (!in_array($file, array(".", "..", "Autoload.php", "index.html", "Model.php"))) {
 //            include "$core_path/$file";
             $class_name = explode('.', $file)[0];
 

@@ -8,12 +8,12 @@
  */
 class Model
 {
-
+    public $db;
     /**
      * Model constructor.
      */
     public function __construct()
     {
-//        echo "Hello I am model";
+        $this->db = new Database();
     }
 }

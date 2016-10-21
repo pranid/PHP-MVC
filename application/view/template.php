@@ -1,7 +1,3 @@
-<?php $this->view('template/header'); ?>
-<div class="row">
-	<div class="col-sm-12">
-		<?php $this->view($content,$data); ?>
-	</div>
-</div>	
-<?php 	$this->view('template/footer'); ?>
+<?php $this->load->view('template/header'); ?>
+<?php $this->load->view($content, $content_data); ?>
+<?php $this->load->view('template/footer'); ?>

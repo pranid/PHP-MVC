@@ -10,32 +10,39 @@ class Loader
 {
     private $view_path = "./application/view";
     private $model_path = "./application/model";
+    private $load;
 
     /**
      * Loader constructor.
      */
     public function __construct()
     {
-
+        $this->load = $this;
     }
 
     public function view($view, $data = null)
     {
         if (isset($view)) {
-            if (isset($data))
-                extract($data);
+            if (isset($data)) {
+                extract($data, EXTR_SKIP);
 
+            }
+            echo "<b>$view</b> $image <br>";
 
             if (!(include "$this->view_path/$view.php")) {
+
                 die("View $view not found");
             }
 
 
         }
+
     }
 
     public function model($model)
     {
         include "$this->model_path/$model";
     }
+
+
 }
