@@ -23,16 +23,10 @@ class Loader
     public function view($view, $data = null)
     {
         if (isset($view)) {
-            if (isset($data)) {
+            if (isset($data))
                 extract($data, EXTR_SKIP);
-
-            }
-            echo "<b>$view</b> $image <br>";
-
-            if (!(include "$this->view_path/$view.php")) {
-
+            if (!(include "$this->view_path/$view.php"))
                 die("View $view not found");
-            }
 
 
         }
